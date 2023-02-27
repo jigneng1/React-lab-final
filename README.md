@@ -1,6 +1,6 @@
 # React todo App (Lab week3)
 
-outline 
+Outline 
 
 Responsive with MUI
 
