@@ -3,7 +3,7 @@ import CardList from "./CardList";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { TextField } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 
 const style = {
   display: "flex",
@@ -36,6 +36,7 @@ function Todo() {
   function handleAdd() {
     setTodo([...todo, todoInput]);
     setTodoInput("");
+    settodoError(true);
     handleClose();
   }
 
@@ -43,14 +44,13 @@ function Todo() {
     setTodoInput(e.target.value);
     if (e.target.value === null || e.target.value === "") {
       settodoError(true);
-    }
-    else{
+    } else {
       settodoError(false);
     }
   }
 
   return (
-    <div>
+    <Box sx={{ margin: "20px" }}>
       <div
         style={{
           display: "flex",
@@ -59,7 +59,12 @@ function Todo() {
         }}
       >
         <div>
-          <h1 style={{ color: "#fefffb", fontSize: "60px" }}>Incoming</h1>
+          <Typography
+            sx={{ color: "#fefffb", fontSize: { xs: "50px", md: "60px" } }}
+            variant="h1"
+          >
+            Incoming
+          </Typography>
         </div>
         <div
           style={{
@@ -74,48 +79,62 @@ function Todo() {
           {todo.length}
         </div>
       </div>
-      <div
-        style={{
-          padding: "20px",
-          background: "#fefffe",
-          width: "500px",
-          borderRadius: "10px",
-          margin: "20px 0px",
-          fontSize: "25px",
-          color: "#7b7b7b",
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginTop: "20px",
         }}
-        onClick={handleOpen}
       >
-        + Add New Tasks
-      </div>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <TextField
-            error={todoError}
-            id="todo"
-            label="What to you want to do ?"
-            variant="outlined"
-            onChange={(e) => handleInput(e)}
-          />
-          <Button
-            variant="contained"
-            onClick={handleAdd}
-            sx={{ margin: "20px 0px 0px 0px" }}
-            disabled={todoError}
-          >
-            Add
-          </Button>
+        <Box
+          sx={{
+            padding: "20px",
+            background: "#fefffe",
+            width: { xs: "300px", md: "500px" },
+            borderRadius: "10px",
+            margin: "20px 0px",
+            fontSize: "25px",
+            color: "#7b7b7b",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onClick={handleOpen}
+        >
+          + Add New Tasks
         </Box>
-      </Modal>
-      {todo.map((item,index) => {
-        return <CardList todo={item} key={index} setState ={setTodo} state={todo}/>;
-      })}
-    </div>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <TextField
+              error={todoError}
+              id="todo"
+              label="What to you want to do ?"
+              variant="outlined"
+              onChange={(e) => handleInput(e)}
+            />
+            <Button
+              variant="contained"
+              onClick={handleAdd}
+              sx={{ margin: "20px 0px 0px 0px" }}
+              disabled={todoError}
+            >
+              Add
+            </Button>
+          </Box>
+        </Modal>
+        {todo.map((item, index) => {
+          return (
+            <CardList todo={item} key={index} setState={setTodo} state={todo} />
+          );
+        })}
+      </Box>
+    </Box>
   );
 }
 export default Todo;
