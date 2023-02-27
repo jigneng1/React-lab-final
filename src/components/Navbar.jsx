@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
@@ -6,15 +6,34 @@ function Navbar() {
     <div>
       <h1 className="task">Tasks</h1>
       <nav>
-        <Link to="/todo" style={{ color: "black", textDecoration: "none" }}>
-          <li>Incoming</li>
-        </Link>
-        <Link to="/today" style={{ color: "black", textDecoration: "none" }}>
-          <li>Today</li>
-        </Link>
-        <Link to="/calendar" style={{ color: "black", textDecoration: "none" }}>
-          <li>Calendar</li>
-        </Link>
+        {/* Incoming */}
+        <NavLink replace to="/todo" className="inactive-link">
+          {({ isActive }) =>
+            isActive ? (
+              <li className="active-link">Incoming</li>
+            ) : (
+              <li>Incoming</li>
+            )
+          }
+        </NavLink>
+
+        {/* Today */}
+        <NavLink replace to="/today" className="inactive-link">
+          {({ isActive }) =>
+            isActive ? <li className="active-link">Today</li> : <li>Today</li>
+          }
+        </NavLink>
+
+        {/* Calendar */}
+        <NavLink replace to="/calendar" className="inactive-link">
+          {({ isActive }) =>
+            isActive ? (
+              <li className="active-link">Calendar</li>
+            ) : (
+              <li>Calendar</li>
+            )
+          }
+        </NavLink>
       </nav>
     </div>
   );
