@@ -23,15 +23,11 @@ export default function BottomNav() {
         value="todo"
         icon={<RestoreIcon />}
       />
-      <BottomNavigationAction
-        label="Today"
-        value="today"
-        icon={<Today />}
-      />
+      <BottomNavigationAction label="Today" value="today" icon={<Today />} />
       <BottomNavigationAction
         label="Calendar"
         value="calendar"
-        icon={<CalendarMonth/>}
+        icon={<CalendarMonth />}
       />
     </BottomNavigation>
   );

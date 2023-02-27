@@ -11,14 +11,14 @@ function CardList({ todo, setState, state }) {
       sx={{
         padding: "10px 20px",
         background: "#fefffe",
-        width: { xs: "300px", md: "500px"},
+        width: { xs: "300px", md: "500px" },
         borderRadius: "10px",
         margin: "20px 0px",
         fontSize: "25px",
         color: "#7b7b7b",
         display: "flex",
         alignItems: "center",
-        justifyContent:"space-between"
+        justifyContent: "space-between",
       }}
     >
       <Checkbox onChange={(e) => handleCheck(e)} />

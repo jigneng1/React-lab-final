@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Home from "../components/Home";
 import BottomNav from "../components/BottomNav";
+
 function TodayPage() {
   return (
     <Box
@@ -23,9 +24,9 @@ function TodayPage() {
       <Box
         sx={{
           backgroundColor: "#a08bff",
-          height: { xs: "90%", md: "604px"},
+          height: { xs: "90%", md: "604px" },
           width: { xs: "100%", md: "580px" },
-          margin: {md:"20px"},
+          margin: { md: "20px" },
           borderRadius: "20px",
           display: "flex",
           justifyContent: "center",
