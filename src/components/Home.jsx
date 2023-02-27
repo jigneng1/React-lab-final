@@ -1,12 +1,12 @@
+import { Box } from "@mui/material";
 import Navbar from "./Navbar";
 import Profile from "./Profile";
-import "./Home.css"
 function Home() {
   return (
-    <div className="layout">
+    <Box>
       <Profile />
       <Navbar />
-    </div>
+    </Box>
   );
 }
 export default Home;

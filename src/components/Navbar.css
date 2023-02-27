@@ -5,10 +5,16 @@ li {
   padding: 15px 80px;
   border-radius: 20px;
   background-color: aliceblue;
+  text-align: center;
 }
 
 .task {
   font-size: 2rem;
   font-weight: 500;
   color: #727373;
+}
+
+li:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
 }
