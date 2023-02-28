@@ -19,6 +19,7 @@ function CardList({ todo, setState, state }) {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
   };
 
   return (

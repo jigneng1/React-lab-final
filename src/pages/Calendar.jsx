@@ -17,7 +17,7 @@ function CalendarPage() {
     height: { xs: "90%", md: "604px" },
     width: { xs: "100%", md: "580px" },
     margin: { md: "20px" },
-    borderRadius: "20px",
+    borderRadius: {md:"20px"},
     display: "flex",
     justifyContent: "center",
     alignItems: "center",

@@ -44,6 +44,7 @@ function Todo() {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
   };
 
   const wrapperTodoListStyle = {
@@ -67,6 +68,7 @@ function Todo() {
   const headerTodoListLengthStyle = {
     padding: "20px 30px",
     backgroundColor: "#b0a3f5",
+    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
     fontSize: "50px",
     borderRadius: "10px",
     color: "white",
@@ -88,6 +90,12 @@ function Todo() {
     boxShadow: 24,
     p: 4,
     borderRadius: "10px",
+  };
+
+  const horizontalStyle = {
+    width: "90%",
+    backgroundColor: "white",
+    boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)",
   };
 
   return (
@@ -126,6 +134,7 @@ function Todo() {
             );
           })}
         </Box>
+        <hr style={horizontalStyle}></hr>
       </Box>
 
       {/* Modal for adding task */}

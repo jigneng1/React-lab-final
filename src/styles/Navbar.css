@@ -4,7 +4,8 @@ li {
   list-style-type: none;
   padding: 15px 80px;
   border-radius: 20px;
-  background-color: aliceblue;
+  background-color: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   text-align: center;
   transition: transform 0.7s ease;
 }
